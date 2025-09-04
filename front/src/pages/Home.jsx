@@ -124,7 +124,11 @@ const Home = () => {
           {/* Submissions Table */}
           {showSubmissions && submissions.length > 0 && (
             <div className="max-w-3xl mx-auto bg-white bg-opacity-90 p-4 sm:p-6 rounded-xl shadow-lg overflow-x-auto">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-center text-teal-600">તમારા તમામ દાખલાઓ</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-1 text-center text-teal-600">તમારા તમામ દાખલાઓ</h3>
+              <p className="text-center text-sm text-gray-600 mb-4">
+                કુલ દાખલાઓ: <span className="font-semibold text-teal-700">{submissions.length}</span>
+              </p>
+
               <table className="min-w-full border-collapse">
                 <thead>
                   <tr>
@@ -140,13 +144,16 @@ const Home = () => {
                       <td className="border p-2">{item.name}</td>
                       <td className="border p-2">{item.mobile}</td>
                       <td className="border p-2">{item.problem}</td>
-                      <td className="border p-2">{new Date(item.createdAt).toLocaleString("gu-IN")}</td>
+                      <td className="border p-2">
+                        {new Date(item.createdAt).toLocaleString("gu-IN")}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           )}
+
 
         </div>
       </div>
